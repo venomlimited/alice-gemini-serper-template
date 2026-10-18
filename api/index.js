@@ -240,7 +240,7 @@ export default async function handler(req, res) {
 
     return res.status(200).json(aliceResponse(answer, false, history));
   } catch (error) {
-    const safeError = error?.message === "AbortError" ? "TIME_BUDGET_EXHAUSTED" : error;
+    const safeError = error?.name === "AbortError" ? "TIME_BUDGET_EXHAUSTED" : error;
     console.warn("Alice webhook returned a fallback response:", safeError?.message || "unknown error");
     return res.status(200).json(aliceResponse(errorForUser(safeError), false, oldHistory));
   }
