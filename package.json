@@ -1,13 +1,16 @@
 {
-  "name": "alice-gemini-serper-template",
-  "version": "1.0.0",
+  "name": "alice-gemini-serper",
+  "version": "2.0.0",
   "private": true,
+  "description": "Навык Яндекс Алисы «Джарвис»: Gemini + поиск Serper на Vercel",
   "type": "module",
-  "description": "Minimal Vercel webhook for a Yandex Alice skill powered by Gemini with optional Serper web search",
   "engines": {
     "node": ">=22"
   },
   "scripts": {
-    "test": "node --test"
+    "test": "node --test \"test/*.test.js\""
+  },
+  "dependencies": {
+    "@vercel/functions": "^2.0.0"
   }
 }
